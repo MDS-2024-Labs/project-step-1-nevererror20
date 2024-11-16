@@ -20,6 +20,12 @@ This module is responsible for loading, classifying, and analyzing quiz question
    `questions`: A list of available questions.  
    `category`: The category to filter questions by.  
    `number`: The number of questions to retrieve.
+
+4. `filter_questions_by_difficulty(questions, difficulty)`: Filter questions based on their difficulty level (e.g., Easy, Medium, Hard).
+    *Parameters*: 
+    `questions`: A list of questions.
+    `difficulty`: The difficulty level to filter by.
+    *Returns*: A list of questions matching the specified difficulty.
 ---
 #### `question_manager` Module
 This module is responsible for managing the question bank, including adding, removing, and updating questions.
@@ -37,3 +43,11 @@ This module is responsible for managing the question bank, including adding, rem
    *Parameters*:  
    `question_id`: The ID of the question to update.  
    `updated_data`: A dictionary containing the updated question information.
+
+4. `get_question_by_id(question_id)`: Retrieve a specific question from the question bank by its unique identifier.
+    *Parameters*:
+    `question_id`: The ID of the question to retrieve.
+    *Returns*: The question matching the ID or None if not found.
+
+5. `list_all_questions()`: List all the questions currently stored in the question bank.
+    *Returns*: A list of all available questions.
