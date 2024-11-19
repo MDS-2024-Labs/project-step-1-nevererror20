@@ -11,11 +11,10 @@ This module is responsible for managing the whole quiz session, including starti
 **Methods**
 1. `__init__()`: Initialize a new instance of the class with basic attributes.
 
-2. `start_quiz(questions, num_questions)`: Start a new quiz session. Randomly select the specified number of questions from question manager and reset the state of quiz.
+2. `start_quiz(questions)`: Start a new quiz session and reset the state of quiz. The questions used for the quiz are generated from question manager.
    *Parameters*:
    `questions`: A list of available questions.
-   `num_questions`: The number of question randomly selected for this quiz.
-
+   
 3. `submit_answer(answer)`: Submit the user's answer for the current question and checks if the user's answer is correct. If correct, add one score, otherwise add the question with the user's answer and the correct answer to the question to `wrong_answers`. After these, add `current_question_index` by one moving to next question.
    *Parameters*:
    `answer`: The answer given by the user.
