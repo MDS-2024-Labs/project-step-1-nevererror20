@@ -10,7 +10,7 @@ The quizzing Package is about creating, managing, and conducting interactive qui
 This module is responsible for loading, classifying, and analyzing quiz questions. It provides utilities to organize questions and perform statistical analysis on them.
 
 **Methods**
-1. `load_questions_from_file(filepath)`: Load questions from a JSON or CSV file and return them as a list of dictionaries.
+1. `load_questions_from_file(filepath)`: Load questions from a JSON or CSV file and return them as a list of dictionaries.<br>
    *Parameters*:  
    `filepath`: The file path of the JSON or CSV file containing questions.
 
@@ -74,7 +74,7 @@ This module is responsible for managing the whole quiz session, including starti
 **Methods**
 1. `__init__()`: Initialize a new instance of the class with basic attributes.
 
-2. `start_quiz(questions)`: Start a new quiz session and reset the state of quiz. The questions used for the quiz are generated from question manager.
+2. `start_quiz(questions)`: Start a new quiz session and reset the state of quiz. The questions used for the quiz are generated from question manager.<br>
    *Parameters*:<br>
    `questions`: A list of questions selected for this quiz.
    
