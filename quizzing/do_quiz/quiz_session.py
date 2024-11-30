@@ -23,10 +23,10 @@ class QuizSession:
         self.current_question_index += 1
         
     def end_quiz(self):
-        total_score = self.score 
+        total_score = self.score # show the final score to user
         print("Score you got is: {}.\n".format(total_score))
 
-    def get_wrong_answers(self):
+    def get_wrong_answers(self): # show information about wrong questions
         print('------ Questions your answered wrong ------')
         for i in range(len(self.wrong_answers)):
             print('Question {}'.format(self.wrong_answers[i]['id']))

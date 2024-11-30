@@ -3,6 +3,9 @@
 # import sub_package1
 from quizzing.question_bank.question_loader import questionloader, random_question
 from quizzing.question_bank.question_manager import questionmanager
+# import sub_package2
+from quizzing.do_quiz.quiz_session import QuizSession
+from quizzing.do_quiz.quiz_timer import Timer
 
 # initialize the question bank
 manager = questionmanager()
@@ -90,8 +93,38 @@ while True:
         break
 
     if x4 == 'y':
-        random_category = input(f"Please enter the question category you want to choose.")
-        random_difficulty = input(f"Please enter the question difficulty you want to choose.")
-        random_number = int(input(f"Please enter the question number you want to choose."))
+        random_category = input(f"Please enter the question category you want to choose.\n")
+        random_difficulty = input(f"Please enter the question difficulty you want to choose.\n")
+        random_number = int(input(f"Please enter the question number you want to choose.\n"))
         random_questions.extend(random_question_bank.get_random_questions(category=random_category, difficulty=random_difficulty, number=int(random_number)))
         print(f"Random questions has been chosen for quiz.")
+        
+quiz = QuizSession()
+quiz.start_quiz(random_questions)
+
+timer = Timer()
+timer.start_timer(60) # set time for 1min and start
+
+while quiz.current_question_index < len(quiz.questions):
+    remaining_time = timer.check_time_remaining()
+    if remaining_time <= 0:
+        print("Time is up!") # If time is run out, end the quiz
+        break
+            
+    current_question = quiz.questions[quiz.current_question_index]
+    
+    # Question id & content
+    print("Question {}\n{}".format(current_question['id'],current_question['text']))
+    answer = input("Your Answer: ").upper()
+    print('\n')
+    quiz.submit_answer(answer)
+    
+# close timer and quiz
+timer.end_timer()  
+quiz.end_quiz() 
+if quiz.wrong_answers == []:
+    print('Congratulations! You got full points!') # set message to users who get full scores
+else:
+    wrong_answers = quiz.get_wrong_answers() # show details of wrong answers
+    print(wrong_answers)
+
