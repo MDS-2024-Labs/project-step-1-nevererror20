@@ -1,5 +1,5 @@
-from doQuiz.quizsession import QuizSession
-from doQuiz.timer import Timer
+from do_quiz.quizsession import QuizSession
+from do_quiz.timer import Timer
 
 questions = [
     {
