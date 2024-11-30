@@ -7,7 +7,7 @@ The quizzing Package is about creating, managing, and conducting interactive qui
 ### `question_bank` Sub-package
 ---
 #### `question_loader` Module 
-This module is responsible for loading, classifying, and analyzing quiz questions. It provides utilities to organize questions and perform statistical analysis on them.
+This module is responsible for loading, classifying, and analyzing quiz questions. It provides utilities to organize questions and perform statistical analysis on them. **This module uses inheritance.**
 
 **Methods**
 1. `load_questions_from_file(filepath)`: Load questions from a JSON or CSV file and return them as a list of dictionaries.<br>
